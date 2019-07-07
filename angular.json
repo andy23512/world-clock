@@ -138,5 +138,8 @@
       }
     }
   },
-  "defaultProject": "world-clock"
+  "defaultProject": "world-clock",
+  "cli": {
+    "defaultCollection": "@ngxs/schematics"
+  }
 }
