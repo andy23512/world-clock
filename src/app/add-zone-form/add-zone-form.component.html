@@ -1,8 +1,14 @@
 <mat-form-field>
   <mat-label>Select zone</mat-label>
-  <mat-select [(ngModel)]="selectedZone" name="zone">
-    <mat-option *ngFor="let zone of zones" [value]="zone">
+  <mat-select [formControl]="zoneCtrl" name="zone">
+    <mat-option>
+      <ngx-mat-select-search [formControl]="zoneFilterCtrl" [placeholderLabel]="'Search...'"></ngx-mat-select-search>
+    </mat-option>
+    <mat-option *ngFor="let zone of filteredZones$ | async" [value]="zone">
       {{zone}}
     </mat-option>
   </mat-select>
+  <button mat-icon-button matSuffix (click)="addZone($event)">
+    <mat-icon>send</mat-icon>
+  </button>
 </mat-form-field>

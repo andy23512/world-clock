@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import {
   MatCardModule,
   MatSelectModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatIconModule,
+  MatButtonModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -12,7 +14,8 @@ import { ZoneSlotComponent } from './zone-slot/zone-slot.component';
 import { NgxsModule } from '@ngxs/store';
 import { ZoneState } from './state/zone.state';
 import { AddZoneFormComponent } from './add-zone-form/add-zone-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 @NgModule({
   declarations: [AppComponent, ZoneSlotComponent, AddZoneFormComponent],
@@ -20,10 +23,14 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxsModule.forRoot([ZoneState]),
     MatCardModule,
     MatFormFieldModule,
-    MatSelectModule
+    NgxMatSelectSearchModule,
+    MatSelectModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
