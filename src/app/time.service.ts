@@ -10,6 +10,4 @@ export class TimeService {
   private timeSubject = new BehaviorSubject<moment.Moment>(moment());
   public time$ = this.timeSubject.asObservable();
   public moment = moment;
-
-  constructor() {}
 }

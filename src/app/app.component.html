@@ -1,1 +1,2 @@
-<app-zone-slot></app-zone-slot>
+<app-zone-slot *ngFor="let zone of (zones$ | async)" [zone]="zone"></app-zone-slot>
+<app-add-zone-form></app-add-zone-form>

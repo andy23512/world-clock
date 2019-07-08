@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Select zone</mat-label>
+  <mat-select [(ngModel)]="selectedZone" name="zone">
+    <mat-option *ngFor="let zone of zones" [value]="zone">
+      {{zone}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,8 +1,4 @@
 <mat-card>
-  Local Time:
-  <span>{{timeService.moment.tz.guess()}}</span>
-  <span>{{(timeService.time$ | async).clone().tz()}}</span>
-  <span>{{(timeService.time$ | async).clone().format()}}</span>
-  America Time:
-  <span>{{(timeService.time$ | async).clone().tz('America/Los_Angeles').format()}}</span>
+  {{zone.name}}
+  <span>{{(timeService.time$ | async).clone().tz(zoneString).format('YYYY-MM-DDTHH:mm:ssZ z')}}</span>
 </mat-card>

@@ -1,20 +1,20 @@
 import { State, Action, StateContext } from '@ngxs/store';
-import { ZoneAction } from './zone.actions';
+import { AddZone } from './zone.actions';
 
-export class ZoneStateModel {
-  public items: string[];
+export interface Zone {
+  name: string;
 }
+
+export type ZoneStateModel = Zone[];
 
 @State<ZoneStateModel>({
   name: 'zone',
-  defaults: {
-    items: []
-  }
+  defaults: [{ name: 'Local' }, { name: 'Europe/Stockholm' }]
 })
 export class ZoneState {
-  @Action(ZoneAction)
-  add(ctx: StateContext<ZoneStateModel>, action: ZoneAction) {
-    const state = ctx.getState();
-    ctx.setState({ items: [ ...state.items, action.payload ] });
+  @Action(AddZone)
+  AddZone(ctx: StateContext<ZoneStateModel>, { name }: AddZone) {
+    const zones = ctx.getState();
+    ctx.setState([...zones, { name }]);
   }
 }

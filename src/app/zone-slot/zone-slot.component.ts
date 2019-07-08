@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TimeService } from '../time.service';
+import { Zone } from '../state/zone.state';
 
 @Component({
   selector: 'app-zone-slot',
   templateUrl: './zone-slot.component.html',
   styleUrls: ['./zone-slot.component.sass']
 })
-export class ZoneSlotComponent implements OnInit {
-  constructor(public timeService: TimeService) {}
+export class ZoneSlotComponent {
+  @Input() public zone: Zone;
 
-  ngOnInit() {}
+  get zoneString() {
+    return this.zone.name === 'Local'
+      ? this.timeService.moment.tz.guess()
+      : this.zone.name;
+  }
+
+  constructor(public timeService: TimeService) {}
 }
