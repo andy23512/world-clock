@@ -2,4 +2,8 @@
   <mat-card-title>{{zone.name}} ({{(moment$ | async).format('Z z')}})</mat-card-title>
   <mat-card-content>{{(moment$ | async).format('YYYY-MM-DDTHH:mm:ss')}}
   </mat-card-content>
+  <mat-placeholder>Time</mat-placeholder>
+  <mat-datetimepicker-toggle [for]="datetimePicker" matSuffix></mat-datetimepicker-toggle>
+  <mat-datetimepicker #datetimePicker type="datetime" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+  <input matInput [formControl]="time" [matDatetimepicker]="datetimePicker" required autocomplete="false">
 </mat-card>

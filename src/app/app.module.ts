@@ -5,8 +5,11 @@ import {
   MatSelectModule,
   MatFormFieldModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatDatepickerModule
 } from '@angular/material';
+import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment';
+import { MatDatetimepickerModule } from '@mat-datetimepicker/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +33,10 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     NgxMatSelectSearchModule,
     MatSelectModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatMomentDatetimeModule,
+    MatDatetimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

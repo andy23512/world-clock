@@ -185,6 +185,13 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.15.tgz#b2ba33e472dc5e530047c408ff7a35deba4427b8"
   integrity sha512-Ig5Jr7mnDelaZvSbUd9YhI5am3q1ku9xelAuwvtyDKvQJeKQj3BtTagcOgWrnQBfrJ/FsA/M5Zo48ncSsV0tqQ==
 
+"@angular/material-moment-adapter@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/material-moment-adapter/-/material-moment-adapter-8.0.2.tgz#c1b96c1a821fb7a1916cb77dc97d339130e0da57"
+  integrity sha512-90mFl4ZPRgj4NowspMcuIZeWOTpEHlRPG2CGuyZmc9fK8DVpYQl8a/omS+eL3XdkNeT+escCImMiPl2HSPC/nw==
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/material@7.3.7":
   version "7.3.7"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-7.3.7.tgz#dcd95e6618ba6254c5880efee1aad349cf5b9140"
@@ -505,6 +512,20 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
+
+"@mat-datetimepicker/core@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@mat-datetimepicker/core/-/core-2.0.1.tgz#e0db1db5d4cf7ba56b724ec040817cb68b5775f2"
+  integrity sha1-4NsdtdTPe6Vrck7AQIF8totXdfI=
+  dependencies:
+    tslib "^1.9.0"
+
+"@mat-datetimepicker/moment@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@mat-datetimepicker/moment/-/moment-2.0.1.tgz#62bd16436de3d9db3dae817211834c329a9d86f0"
+  integrity sha1-Yr0WQ23j2ds9roFyEYNMMpqdhvA=
+  dependencies:
+    tslib "^1.9.0"
 
 "@ngtools/webpack@7.3.9":
   version "7.3.9"
