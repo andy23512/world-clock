@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TimeService {
-  private timeSubject = new BehaviorSubject<moment.Moment>(moment());
-  public time$ = this.timeSubject.asObservable();
+  private momentSubject = new BehaviorSubject<moment.Moment>(moment());
+  public moment$ = this.momentSubject.asObservable();
   public moment = moment;
 }

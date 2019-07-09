@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { TimeService } from '../time.service';
 import { Zone } from '../state/zone.state';
+import * as moment from 'moment';
+import 'moment-timezone';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-zone-slot',
@@ -9,6 +13,7 @@ import { Zone } from '../state/zone.state';
 })
 export class ZoneSlotComponent {
   @Input() public zone: Zone;
+  public moment$: Observable<moment.Moment>;
 
   get zoneString() {
     return this.zone.name === 'Local'
@@ -16,5 +21,9 @@ export class ZoneSlotComponent {
       : this.zone.name;
   }
 
-  constructor(public timeService: TimeService) {}
+  constructor(public timeService: TimeService) {
+    this.moment$ = this.timeService.moment$.pipe(
+      map(time => time.clone().tz(this.zoneString))
+    );
+  }
 }

@@ -1,4 +1,5 @@
 <mat-card>
-  {{zone.name}}
-  <span>{{(timeService.time$ | async).clone().tz(zoneString).format('YYYY-MM-DDTHH:mm:ssZ z')}}</span>
+  <mat-card-title>{{zone.name}} ({{(moment$ | async).format('Z z')}})</mat-card-title>
+  <mat-card-content>{{(moment$ | async).format('YYYY-MM-DDTHH:mm:ss')}}
+  </mat-card-content>
 </mat-card>
